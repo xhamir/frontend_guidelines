@@ -241,7 +241,7 @@ Ejemplo:
    
 
 # Reglas de codificación en SCSS
-Para los estilos por convicción de los desarrollados del proyecto se utiliza la siguiente metodología:
+Para los estilos por convicción de los desarrolladores del proyecto se utiliza la siguiente metodología:
 
     scss/  
         |- base/  
