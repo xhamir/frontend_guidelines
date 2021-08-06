@@ -241,3 +241,200 @@ Ejemplo:
    
 
 # Reglas de codificación en SCSS
+Para los estilos por convicción de los desarrollados del proyecto se utiliza la siguiente metodología:
+
+    scss/  
+        |- base/  
+        |- components/
+        |- layout/
+        |- pages/
+        |- main.scss
+        
+   ---
+En el archivo main.scss importaremos los archivos creados en las carpetas base, components, layout y pages.
+
+Ejemplo:
+
+    // Abstracts:
+    
+    // Base:
+    @import  "base/utilities";
+    
+    // Components: TEST COMMENT
+    @import  "components/Area_A/initTask";
+    @import  "components/Area_A/routeList";
+    @import  "components/Home/homeHeader";
+    @import  "components/Inventario/detail";
+    @import  "components/Inventario/location";
+    @import  "components/Inventario/reports";
+    @import  "components/Inventario/uploadDBF";
+    @import  "components/Receive/notFound";
+    @import  "components/Receive/products";
+    @import  "components/Route/detailRoute";
+    @import  "components/Route/routeAsign";
+    @import  "components/Route/routeUserAsignRoute";
+    @import  "components/Shared/exportFilesModal";
+    @import  "components/Shared/facturas";
+    @import  "components/Shared/facturasDetail";
+    @import  "components/Shared/header";
+    @import  "components/Shared/historial";
+    @import  "components/Shared/internetStatus";
+    @import  "components/Shared/loading";
+    @import  "components/Shared/responseStatus";
+    @import  "components/Supervisors/listSupervisor";
+    @import  "components/Supervisors/negados";
+    @import  "components/Supervisors/objetivo";
+    @import  "components/Supervisors/productivity";
+    @import  "components/Supervisors/usersControl";
+    @import  "components/Supervisors/usersControlDetail";
+    @import  "components/Supervisors/verificador";
+    @import  "components/Users/CEUser";
+    @import  "components/Management/ceManagement";
+    @import  "components/AfterSale/claims";
+    @import  "components/AfterSale/actions";
+    @import  "components/WorkShifts/listEditable";
+    
+    // Layout:
+    @import  "layout/sidebar";
+    @import  "layout/footer";
+    
+    // Pages:
+    @import  "pages/areaa";
+    @import  "pages/arrangement";
+    @import  "pages/classifier";
+    @import  "pages/homev2";
+    @import  "pages/inventario";
+    @import  "pages/login";
+    @import  "pages/monitor";
+    @import  "pages/planning";
+    @import  "pages/printroute";
+    @import  "pages/rutas";
+    @import  "pages/settings";
+    @import  "pages/uploadfile";
+---
+En la carpeta "base" tenemos las los archivos con estilos globales, los cuales se compartirán en todo el proyecto y componentes existentes.
+
+Ejemplo:
+
+     base/
+	     |- _utilities.scss
+    	
+Los archivos de estilos que codifiquemos deben iniciar con un guion bajo y un nombre representativo. En este caso _utilities.scss.
+
+Contenido:
+	
+
+    /* Utilities */
+    
+    * {
+    box-sizing: border-box  !important;
+    }
+    
+    html {
+    font-size: 15px;
+    }
+    
+    body {
+    background: #1e202a  !important;
+    }
+
+---
+En la carpeta "components" tenemos las los archivos con estilos específicos para componentes usados en determinadas secciones de nuestro código. Divididos por subcarpetas que describan que sección de nuestro código representan.
+
+Ejemplo:
+
+    components/
+    	|-Inventario
+	    	|- _detail.scss
+    	
+ 
+
+Contenido:
+
+    .onclicktable {
+    padding: 0.75rem;
+    }
+      
+    .detail {
+	    margin: 0rem  3.5rem;
+	    padding: 2rem  0;
+	    &__filter {
+		    display: grid;
+		    grid-template-columns: 3fr  1fr  1fr;
+		    grid-gap: 0.8rem;
+		    padding: 1rem;
+		    select {
+			    border-radius: 5px  !important;
+			    padding: 0  0;
+			    padding: 0.8rem  0.8rem;
+		    }
+	    }
+    
+	    &__header {
+		    color: #dbe9ff;
+		    padding: 0  1rem;
+		    font-size: 1.8rem;
+		    display: grid;
+		    grid-template-columns: 3fr  2fr  2fr  2fr  2fr  0.5fr;
+		    grid-gap: 2rem;
+		    &--area {
+			    p:first-child {
+				    color: #ffffff;
+			    }
+			    p:last-child {
+				    font-size: 1.3rem;
+			    }
+		    }
+    
+		    &--inventario {
+			    p:first-child {
+				    color: #75c124;
+			    }
+			    p:last-child {
+				    font-size: 1.3rem;
+			    }
+		    }
+    
+		    &--fisico {
+			    p:first-child {
+				    color: #ed5824;
+			    }
+			    p:last-child {
+				    font-size: 1.3rem;
+			    }
+		    }
+    
+		    &--diferencia {
+			    p:first-child {
+				    color: #8f1115;
+			    }
+			    p:last-child {
+				    font-size: 1.3rem;
+			    }
+			}
+    
+		    &--reportes {
+			    border: 1px  solid  gray;
+			    p:first-child {
+				    text-align: center;
+			    }
+			    p:last-child {
+				    text-align: center;
+				    font-size: 1.3rem;
+				    margin: 0;
+			    }
+		    }
+    
+		    &--download {
+			    cursor: pointer;
+			    font-size: 3rem;
+			    align-self: center;
+			    justify-self: center;
+			    color: #ed5824;
+		    }
+	    }
+  
+	    hr {
+		    border-color: #8080802e;
+	    }
+    }
