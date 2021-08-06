@@ -1,6 +1,5 @@
 # Code guidelines.
-Se genera este archivo como una guía lo más específica posible de las reglas de código que debemos seguir y los múltiples casos en los que podemos mejorar para seguir las mejores prácticas. Esta guía se dividirá en dos partes, la primera para nuestro código en Vue y la segunda para nuestros estilos en el proyecto.
-
+Se genera este archivo como una guía lo más específica posible de las reglas de código que debemos seguir y los múltiples casos en los que podemos mejorar para seguir las mejores prácticas. 
 
 # Reglas de codificación en Vue.
 
@@ -152,19 +151,15 @@ Ejemplo:
     |- TodoList.vue  
     |- TodoItem.vue
 
-## Notación de nombres de componentes single-file. Revision-
-Los nombres de los archivos de los  componentes single-file deben ser siempre PascalCase o siempre kebab-case.
+## Notación de nombres de componentes single-file.
+Los nombres de los archivos de los  componentes single-file deben ser siempre PascalCase.
 
-El autocompletado de los editores de código funciona mejor cuando se utiliza PascalCase, ya que esta es consistente con la forma en que referenciamos componenten en JS(X) y plantillas, dónde sea posible. Sin embargo, nombres de archivos mixtos pueden crear problemas en sistemas de archivos insensibles a las mayúsculas y minúsculas, es por esto que utilizar kebab-case es perfectamente aceptable.
+El autocompletado de los editores de código funciona mejor cuando se utiliza PascalCase, ya que esta es consistente con la forma en que referenciamos componenten en JS(X) y plantillas, dónde sea posible.
 
 Ejemplo:
 
     components/  
     |- MyComponent.vue
----
-
-    components/  
-    |- my-component.vue
 
 ## Nombre de componentes fuertemente acoplados.
 Los componentes hijo que están fuertemente acoplados a su padre deben incluir el nombre del componente padre como prefijo.
@@ -177,8 +172,8 @@ Ejemplo:
     |- SearchSidebar.vue  
     |- SearchSidebarNavigation.vue
 
-## Abreviaciones en directivas. Revision-
-Las abreviación de directivas (`:`  para  `v-bind`  y  `@`  para  `v-on:`) deben ser utilizadas siempre o nunca.
+## Abreviaciones en directivas.
+Las abreviación de directivas (`:`  para  `v-bind`  y  `@`  para  `v-on:`) deben ser utilizadas siempre.
 
 Ejemplo incorrecto:
 
@@ -236,205 +231,4 @@ Ejemplo:
 	    inputClasses: function () {  
 		    // ...  
 	    }  
-    }
-
-   
-
-# Reglas de codificación en SCSS
-Para los estilos por convicción de los desarrolladores del proyecto se utiliza la siguiente metodología:
-
-    scss/  
-        |- base/  
-        |- components/
-        |- layout/
-        |- pages/
-        |- main.scss
-        
-   ---
-En el archivo main.scss importaremos los archivos creados en las carpetas base, components, layout y pages.
-
-Ejemplo:
-
-    // Abstracts:
-    
-    // Base:
-    @import  "base/utilities";
-    
-    // Components: TEST COMMENT
-    @import  "components/Area_A/initTask";
-    @import  "components/Area_A/routeList";
-    @import  "components/Home/homeHeader";
-    @import  "components/Inventario/detail";
-    @import  "components/Inventario/location";
-    @import  "components/Inventario/reports";
-    @import  "components/Inventario/uploadDBF";
-    @import  "components/Receive/notFound";
-    @import  "components/Receive/products";
-    @import  "components/Route/detailRoute";
-    @import  "components/Route/routeAsign";
-    @import  "components/Route/routeUserAsignRoute";
-    @import  "components/Shared/exportFilesModal";
-    @import  "components/Shared/facturas";
-    @import  "components/Shared/facturasDetail";
-    @import  "components/Shared/header";
-    @import  "components/Shared/historial";
-    @import  "components/Shared/internetStatus";
-    @import  "components/Shared/loading";
-    @import  "components/Shared/responseStatus";
-    @import  "components/Supervisors/listSupervisor";
-    @import  "components/Supervisors/negados";
-    @import  "components/Supervisors/objetivo";
-    @import  "components/Supervisors/productivity";
-    @import  "components/Supervisors/usersControl";
-    @import  "components/Supervisors/usersControlDetail";
-    @import  "components/Supervisors/verificador";
-    @import  "components/Users/CEUser";
-    @import  "components/Management/ceManagement";
-    @import  "components/AfterSale/claims";
-    @import  "components/AfterSale/actions";
-    @import  "components/WorkShifts/listEditable";
-    
-    // Layout:
-    @import  "layout/sidebar";
-    @import  "layout/footer";
-    
-    // Pages:
-    @import  "pages/areaa";
-    @import  "pages/arrangement";
-    @import  "pages/classifier";
-    @import  "pages/homev2";
-    @import  "pages/inventario";
-    @import  "pages/login";
-    @import  "pages/monitor";
-    @import  "pages/planning";
-    @import  "pages/printroute";
-    @import  "pages/rutas";
-    @import  "pages/settings";
-    @import  "pages/uploadfile";
----
-En la carpeta "base" tenemos las los archivos con estilos globales, los cuales se compartirán en todo el proyecto y componentes existentes.
-
-Ejemplo:
-
-     base/
-	     |- _utilities.scss
-    	
-Los archivos de estilos que codifiquemos deben iniciar con un guion bajo y un nombre representativo. En este caso _utilities.scss.
-
-Contenido:
-	
-
-    /* Utilities */
-    
-    * {
-    box-sizing: border-box  !important;
-    }
-    
-    html {
-    font-size: 15px;
-    }
-    
-    body {
-    background: #1e202a  !important;
-    }
-
----
-En la carpeta "components" tenemos las los archivos con estilos específicos para componentes usados en determinadas secciones de nuestro código. Divididos por subcarpetas que describan que sección de nuestro código representan.
-
-Ejemplo:
-
-    components/
-    	|-Inventario
-	    	|- _detail.scss
-    	
- 
-
-Contenido:
-
-    .onclicktable {
-    padding: 0.75rem;
-    }
-      
-    .detail {
-	    margin: 0rem  3.5rem;
-	    padding: 2rem  0;
-	    &__filter {
-		    display: grid;
-		    grid-template-columns: 3fr  1fr  1fr;
-		    grid-gap: 0.8rem;
-		    padding: 1rem;
-		    select {
-			    border-radius: 5px  !important;
-			    padding: 0  0;
-			    padding: 0.8rem  0.8rem;
-		    }
-	    }
-    
-	    &__header {
-		    color: #dbe9ff;
-		    padding: 0  1rem;
-		    font-size: 1.8rem;
-		    display: grid;
-		    grid-template-columns: 3fr  2fr  2fr  2fr  2fr  0.5fr;
-		    grid-gap: 2rem;
-		    &--area {
-			    p:first-child {
-				    color: #ffffff;
-			    }
-			    p:last-child {
-				    font-size: 1.3rem;
-			    }
-		    }
-    
-		    &--inventario {
-			    p:first-child {
-				    color: #75c124;
-			    }
-			    p:last-child {
-				    font-size: 1.3rem;
-			    }
-		    }
-    
-		    &--fisico {
-			    p:first-child {
-				    color: #ed5824;
-			    }
-			    p:last-child {
-				    font-size: 1.3rem;
-			    }
-		    }
-    
-		    &--diferencia {
-			    p:first-child {
-				    color: #8f1115;
-			    }
-			    p:last-child {
-				    font-size: 1.3rem;
-			    }
-			}
-    
-		    &--reportes {
-			    border: 1px  solid  gray;
-			    p:first-child {
-				    text-align: center;
-			    }
-			    p:last-child {
-				    text-align: center;
-				    font-size: 1.3rem;
-				    margin: 0;
-			    }
-		    }
-    
-		    &--download {
-			    cursor: pointer;
-			    font-size: 3rem;
-			    align-self: center;
-			    justify-self: center;
-			    color: #ed5824;
-		    }
-	    }
-  
-	    hr {
-		    border-color: #8080802e;
-	    }
     }
