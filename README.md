@@ -1,16 +1,14 @@
+
 # Introducción
 
-SCSS guidelines
+[SCSS Guidelines](https://github.com/Subsecretaria-de-Tecnologias-NL/guidelines_frontend/blob/master/guidelines/styleguidelines.md)
 Explicación
 
-VUE guidelines
+[VUE Guidelines](https://github.com/Subsecretaria-de-Tecnologias-NL/guidelines_frontend/blob/master/guidelines/vueguidelines.md)
 Explicación
 
-JS guidelines
+[JS Guidelines](https://github.com/Subsecretaria-de-Tecnologias-NL/guidelines_frontend/blob/master/guidelines/jsguidelines.md)
 Explicación
 
-ESlint guidelines
+[ESLint Guidelines](https://github.com/Subsecretaria-de-Tecnologias-NL/guidelines_frontend/blob/master/guidelines/eslintguidelines.md)
 Explicación.
-
-** Revisar archivos y oportunidad de mejora.
-Quitar cosas que estén de más. **

@@ -1,4 +1,4 @@
-# Code guidelines.
+# Vue guidelines.
 Se genera este archivo como una guía lo más específica posible de las reglas de código que debemos seguir y los múltiples casos en los que podemos mejorar para seguir las mejores prácticas. 
 
 # Reglas de codificación en Vue.

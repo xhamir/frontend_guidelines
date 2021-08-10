@@ -1,15 +1,15 @@
-# Eslint guidelines.
+# ESLint guidelines.
 Se genera este archivo como una guía lo más específica posible de las reglas de [] que debemos seguir y los múltiples casos en los que podemos mejorar para seguir las mejores prácticas.
 
 # Reglas de codificación en ESlint.
 
-## Uso de Eslint.
+## Uso de ESLint.
 
-Eslint es una herramienta que analiza nuestro código y encuentra problemas con nuestro código; como errores de sintaxis, código que no encaja con alguna convención definida que tengamos presente y malas practicas en general dentro del proyecto.
+ESLint es una herramienta que analiza nuestro código y encuentra problemas con nuestro código; como errores de sintaxis, código que no encaja con alguna convención definida que tengamos presente y malas practicas en general dentro del proyecto.
 
 Vue hace uso de esta herramienta como parte de la extensión vue/cli-plugin-eslintla cual utiliza la versión actualmente 6.7.2 o mayores al dia que este leyendo este documento, esto del lado del framework.
 
-EsLint del lado del dresarrollador
+ESLint del lado del dresarrollador
 
 Al momento de desarrollar el proyecto RECI los desarrolladores nos encontramos usando VSCode como IDE con Vue para desarrollar la aplicación, sin embargo solo se estaba haciendo uso de algunas extensiones de VsCode para apoyarnos en el dia a dia para detectar errores comunes de sintaxis y potenciales malas practicas dentro de este, pero no se cuenta con ninguna relación que garantiza este proceso del lado de los despliegues del proyecto a través de la infraestructura con la que contamos.
 
@@ -19,7 +19,7 @@ Extensiones de desarrollo
 
 La siguiente lista es una lista recomendada de extensiones para garantizar la mejor experiencia de desarrollo posible dentro de cualquier proyecto que utilice Vue:
 
-EsLint ^2.1.4 → linter que utilizamos dentro del proyecto para la detección de problema en el código.
+ESLint ^2.1.4 → linter que utilizamos dentro del proyecto para la detección de problema en el código.
 
 Path intellisense 2.2.1 → ayuda para auto completado de rutas de archivos.
 
@@ -27,7 +27,7 @@ Vetur 0.26.1 → Herramienta que cuenta con varias funcionalidades para trabajar
 
 Vue 2 Snippets 0.12.1 → Encuentras casi todos los snippets de código de la API de vue
 
-Configuraciones para eslint
+Configuraciones para ESLint
 
 Actualmente se añadió el siguiente archivo .eslintrc.json con la siguiente configuración:
 
@@ -74,7 +74,7 @@ También se agrego el archivo .eslintignore para ignorar algún archivo especifi
 
 ## Comandos del proyecto para correr el linter.
 
-Dentro de package.json se cuenta con dos comandos las cuales nos sirven para hacer lint del cogido el comando “lint“ es el que viene nativo dentro del proyecto y se agrego el comando “eslint“ para dado algún caso especifico tener mas flexibilidad con el debugging de eslint.
+Dentro de package.json se cuenta con dos comandos las cuales nos sirven para hacer lint del cogido el comando “lint“ es el que viene nativo dentro del proyecto y se agrego el comando “eslint“ para dado algún caso especifico tener mas flexibilidad con el debugging de ESLint.
 
 "lint": "vue-cli-service lint src",
 
