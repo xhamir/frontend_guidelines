@@ -242,7 +242,7 @@ Las guías de estilo de código que fomentan la coherencia no solo previenen est
 	    padding: 0 1em;
 	}
 	```
- **2. Naming**
+ **2. Nombrado**
 
  - Los nombres de los archivos deben usar  `snake_case`.
  - Las clases CSS deben usar el formato `lowercase-hyphenated`  en lugar de  `snake_case`  o  `camelCase`.
