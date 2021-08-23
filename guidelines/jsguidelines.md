@@ -8,10 +8,7 @@ Las convenciones de código pueden ayudar a reducir la fragilidad de los program
 
 Todo nuestro código JavaScript se envía directamente al público. Siempre debe ser de calidad de publicación.
 
-
 ## Archivos de JavaScript
-
-Los programas JavaScript deben almacenarse y entregarse como archivos con extensión .js.
 
 El código JavaScript no debe estar incrustado en archivos HTML a menos que el código sea específico para una sola sesión. El código en HTML aumenta significativamente el peso de la página sin posibilidad de mitigación mediante el almacenamiento en caché y la compresión.
 
@@ -49,6 +46,16 @@ Se prefiere que cada variable tenga su propia línea y comentario. Deben aparece
     let currentEntry, // currently selected table entry
         level = 0,    // indentation level
         size;         // size of table
+
+Crear arrays usando sintaxis de literal en lugar de new Array
+
+    Recomendado: var a = [x1, x2, x3];
+    No usar: var a = new Array(x1, x2, x3);
+
+Crear objetos usando sintaxis de literal en lugar de new Object
+
+    Recomendado: var a = { };
+    No usar: var a = new Object ();
 
 ## Declaración de Funciones
 
@@ -136,7 +143,7 @@ Cuando una función debe invocarse inmediatamente, toda la expresión de invocac
 
 ## Nombres de variables y funciones
 
-Los nombres deben estar formados por 26 letras mayúsculas y minúsculas (A .. Z, a .. z), los 10 dígitos (0 .. 9) y _ (barra inferior). Evite el uso de caracteres internacionales porque es posible que no se lean bien o no se entiendan en todas partes. No use $ (signo de dólar) o \ (barra invertida) en los nombres de variables.
+Los nombres, evitar el uso de caracteres internacionales porque es posible que no se lean bien o no se entiendan en todas partes. No use $ (signo de dólar) o \ (barra invertida) en los nombres de variables.
 
 No utilice _ (barra inferior) como primer carácter de un nombre. A veces se utiliza para indicar privacidad, pero en realidad no proporciona privacidad. Si la privacidad es importante, use los formularios que brindan los miembros privados. Evite las convenciones que demuestren una falta de competencia.
 La mayoría de las variables y funciones deben comenzar con una letra minúscula.
@@ -156,7 +163,6 @@ JavaScript permite que cualquier expresión se utilice como declaración. Esto p
 Las declaraciones compuestas son declaraciones que contienen listas de declaraciones encerradas entre {} (llaves).
 
 Las declaraciones adjuntas deben tener una sangría de cuatro espacios más. La {(llave izquierda) debe estar al final de la línea que comienza la declaración compuesta. La} (llave derecha) debe comenzar una línea y tener una sangría para alinearse con el comienzo de la línea que contiene la {(llave izquierda) correspondiente. Deben usarse llaves alrededor de todas las declaraciones, incluso declaraciones individuales, cuando son parte de una estructura de control, como una declaración if o for. Esto hace que sea más fácil agregar declaraciones sin introducir errores accidentalmente. 
-
 
 ### Declaración del return 
 
@@ -264,9 +270,7 @@ Una declaración try debe tener la siguiente forma:
 
 Evite el uso de la declaración de continue. Tiende a oscurecer el flujo de control de la función.
 
-
 ## Espacios en blanco
-
 
 Las líneas en blanco mejoran la legibilidad al establecer secciones de código que están relacionadas lógicamente.
 
@@ -276,12 +280,9 @@ Una palabra clave seguida de ((paréntesis izquierdo) debe estar separada por un
 
 while (verdadero) {
 
-No se debe usar un espacio en blanco entre el valor de una función y su ((paréntesis izquierdo). Esto ayuda a distinguir entre palabras clave e invocaciones de funciones. Todos los operadores binarios excepto. (Punto) y ((paréntesis izquierdo) y [(paréntesis izquierdo) deben estar separados de sus operandos por un espacio. Ningún espacio debe separar un operador unario y su operando excepto cuando el operador es una palabra como typeof. Cada; (punto y coma) en la parte de control de una instrucción for debe ir seguido de un espacio. Los espacios en blanco deben seguir cada, (coma). Sugerencias de bonificación
+No se debe usar un espacio en blanco entre el valor de una función y su ((paréntesis izquierdo). Esto ayuda a distinguir entre palabras clave e invocaciones de funciones. Todos los operadores binarios excepto. (Punto) y ((paréntesis izquierdo) y [(paréntesis izquierdo) deben estar separados de sus operandos por un espacio. Ningún espacio debe separar un operador unario y su operando excepto cuando el operador es una palabra como typeof. Cada ; (punto y coma) en la parte de control de una instrucción for debe ir seguido de un espacio. Los espacios en blanco deben seguir cada , (coma).
 
 ## {} y []
-
-
-Utilice {} en lugar utilizar new Object (). Utilice [] en lugar de new Array ().
 
 Utilice matrices cuando los nombres de los miembros sean números enteros secuenciales. Utilice objetos cuando los nombres de los miembros sean cadenas o nombres arbitrarios.
 
@@ -297,12 +298,11 @@ En JavaScript los bloques no tienen alcance. Solo las funciones tienen alcance. 
 
 Evite hacer asignaciones en la parte de condición de las declaraciones if y while.
 
-if (a = b) {
+if (a = b) { }
 
 Declaración correcta:
 
-if (a == b) {
-
+if (a == b) { }
 
 ## Operadores === and !== 
 

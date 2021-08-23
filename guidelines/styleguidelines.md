@@ -1,14 +1,15 @@
 # Style Guidelines
-
 Se genera este archivo como una guía se busca describir la arquitectura del proyecto con respecto al acomodo de las hojas scss, así como algunas reglas de estilos y mejores practicas.
-
 
 ## Estructura del Proyecto SCSS.
 Con el objetivo de mantener una arquitectura consistente en el manejo de los estilos del proyecto y facilitar la organización y reutilización de los estilos, se utilizará un método basado en carpetas el cual se centra en mantener las cosas simples y evidentes.
 
-Por lo tanto, la estructura consiste en tener todas las partes almacenadas en 4 carpetas diferentes (base, components, layout y pages) y un único archivo en el directorio raíz (main.scss) el cual importa todas estas partes para luego compilarlas en una hoja de estilo CSS. Quedando de la siguiente manera:
+Por lo tanto, la estructura consiste en tener todas las partes almacenadas en 4 carpetas diferentes (abstracts, base, components, layout y views y un único archivo en el directorio raíz (main.scss) el cual importa todas estas partes para luego compilarlas en una hoja de estilo CSS. Quedando de la siguiente manera:
 
     scss/
+    |- abstracts/
+    |  |- _mixins.scss      # Reglas de responsividad
+    |  |- _variables.scss   # Variables (margins, paddings, colors, sizes)
     |- base/
     |  |– _reset.scss       # Reset/normalize
     |  |– _typography.scss  # Reglas tipográficas
@@ -21,15 +22,24 @@ Por lo tanto, la estructura consiste en tener todas las partes almacenadas en 4 
     |  |– _header.scss  # Encabezamiento
     |  |– _footer.scss  # Pie de página
     |  |– _sidebar.scss  # Barra lateral
-    |  |– _forms.scss  # Formularios
-    |- pages/
-    |  |– _home.scss  # Estilos específicos para la página de inicio
-    |  |– _contact.scss  # Estilos específicos para la página de contacto
+    |- views/
+    |  |– _home.scss  # Estilos específicos para la vista de inicio
+    |  |– _contact.scss  # Estilos específicos para la vista de contacto
     |  …  # Etc.
     |
     |- main.scss.  # Archivo principal de Sass
 
 En los siguientes apartados, describiremos más a fondo los archivos que contendrán cada una de las carpetas y su relación con la distribución en el sitio o la aplicación.
+
+### CARPETA ABSTRACTS
+La carpeta abstracts/ reúne todas las herramientas y helpers de Sass utilizados en todo el proyecto. Cada variable global, función, mixin y placeholder debería estar en esta carpeta.
+
+La regla de oro para esta carpeta es que no debe generar ni una sola línea de CSS cuando se compila por si sola. Solo hay helpers de Sass.
+
+    _variables.scss
+    _mixins.scss
+    _functions.scss
+    _placeholders.scss
 
 ### CARPETA BASE
 La carpeta base/ contiene lo que podríamos llamar la plantilla del proyecto. Allí, puedes encontrar el archivo reset para reiniciar los estilos CSS, algunas reglas tipográficas y probablemente un archivo CSS que define algunos estilos estándares para los elementos HTML más comunes
@@ -54,22 +64,11 @@ Para componentes más pequeños, existe la carpeta components/. Mientras layout/
     _carousel.scss
     _thumbnails.scss
 
-### CARPETA PÁGINAS
-Si tienes estilos específicos para cada página (“View”), es mejor ponerlos en una carpeta pages/, dentro de un archivo con el nombre de la página. Por ejemplo, es común tener muchos estilos específicos para la página principal, por lo que existe la necesidad de tener un archivo _home.scss en la carpeta pages/.
+### CARPETA VIEWS
+Si tienes estilos específicos para cada página (“View”), es mejor ponerlos en una carpeta views/, dentro de un archivo con el nombre de la página. Por ejemplo, es común tener muchos estilos específicos para la página principal, por lo que existe la necesidad de tener un archivo _home.scss en la carpeta pages/.
 
     _home.scss
     _contact.scss
-
-### CARPETA ABSTRACTS
-La carpeta abstracts/ reúne todas las herramientas y helpers de Sass utilizados en todo el proyecto. Cada variable global, función, mixin y placeholder debería estar en esta carpeta.
-
-La regla de oro para esta carpeta es que no debe generar ni una sola línea de CSS cuando se compila por si sola. Solo hay helpers de Sass.
-
-    _variables.scss
-    _mixins.scss
-    _functions.scss
-    _placeholders.scss
-
 
 ## Style Guidelines – Mejores Prácticas
 
@@ -186,7 +185,7 @@ Ejemplo:
 ---
 ### Regla 5: Archivos de estilos que correspondan a una respectiva vista ("View")
 
-En la carpeta "pages" colocaremos los archivos de estilos dedicados únicamente a una respectiva "view", componentes específicos de cada vista que vayamos creando.
+En la carpeta "views" colocaremos los archivos de estilos dedicados únicamente a una respectiva vista, componentes específicos de cada vista que vayamos creando.
 
 Ejemplo:
 
@@ -220,7 +219,7 @@ Ejemplo:
 Las guías de estilo de código que fomentan la coherencia no solo previenen esto, sino que también ayudan a la hora de leer y actualizar el código. Por lo tanto, se sugiere el uso de las siguientes mejores practicas para las hojas de estilo.
 
  1.  **Indentación y tabulación**
-	 - Dos (2) espacios en blanco, en lugar de tabulaciones.
+	 - Una tabulación por cada propiedad o clase hija declarada.
 	 - Idealmente, líneas de 80 caracteres.
 	 - Reglas CSS multilínea correctamente escritas;
 	 - Buen uso de los espacios en blanco.

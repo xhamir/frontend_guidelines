@@ -1,8 +1,6 @@
 # ESLint Guidelines.
 Se genera este archivo como una guía lo más específica posible de las reglas de [] que debemos seguir y los múltiples casos en los que podemos mejorar para seguir las mejores prácticas.
 
-# Reglas de Codificación en ESlint.
-
 ## Uso de ESLint.
 
 ESLint es una herramienta que analiza nuestro código y encuentra problemas con nuestro código; como errores de sintaxis, código que no encaja con alguna convención definida que tengamos presente y malas prácticas en general dentro del proyecto.

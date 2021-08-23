@@ -25,7 +25,7 @@ Ejemplo:
 ## Componente data.
 El componente  `data`  debe ser una función.
 
-Al usar la propiedad  `data`  en un componente (es decir, en cualquier lugar excepto en`new Vue`), el valor debe ser una función que devuelve un objeto.
+Al usar la propiedad  `data`  en un componente (es decir, en cualquier lugar excepto en `new Vue`), el valor debe ser una función que devuelve un objeto.
 
 Ejemplo:
 
@@ -115,7 +115,7 @@ Hay dos casos comunes en los que esto puede ser tentador:
 
 -   Para filtrar elementos en una lista (por ejemplo,  `v-for="user in users" v-if="user.isActive"`). En estos casos, reemplace  `users`  con una nueva propiedad calculada que devuelva su lista filtrada (por ejemplo  `activeUsers`).
     
--   Para evitar renderizar una lista si debe estar oculta (por ejemplo,  `v-for="user in users" v-if="shouldShowUsers"`). En estos casos, mueva el  `v-if`  a un elemento contenedor (por ejemplo,`ul`,  `ol`).
+-   Para evitar renderizar una lista si debe estar oculta (por ejemplo, `v-for="user in users" v-if="shouldShowUsers"`). En estos casos, mueva el `v-if` a un elemento contenedor (por ejemplo, `ul`, `ol`).
 
 Ejemplo:
 
@@ -128,7 +128,6 @@ Ejemplo:
 	     <li>  
     </ul>
 ---
-
     <ul 
     v-if="shouldShowUsers"
     >  
@@ -152,7 +151,7 @@ Ejemplo:
     |- TodoItem.vue
 
 ## Notación de nombres de componentes single-file.
-Los nombres de los archivos de los  componentes single-file deben ser siempre PascalCase.
+Los nombres de los archivos de los componentes single-file deben ser siempre PascalCase.
 
 El autocompletado de los editores de código funciona mejor cuando se utiliza PascalCase, ya que esta es consistente con la forma en que referenciamos componenten en JS(X) y plantillas, dónde sea posible.
 
@@ -178,16 +177,14 @@ Las abreviación de directivas (`:`  para  `v-bind`  y  `@`  para  `v-on:`) debe
 Ejemplo incorrecto:
 
     <input  
-     v-bind:value="newTodoText"  
-     :placeholder="newTodoInstructions"  
-    >
-    
+     v-bind:value="newTodoText"
+    > 
    --- 
-      <input  
-     v-on:input="onInput"  
-     @focus="onFocus"  
+    <input  
+     v-on:input="onInput"
     >
----
+   ---
+
 Ejemplo correcto:
 
     <input  
@@ -195,7 +192,6 @@ Ejemplo correcto:
      :placeholder="newTodoInstructions"  
     >
 ---
-
     <input  
      @input="onInput"  
      @focus="onFocus"  
@@ -236,6 +232,7 @@ Ejemplo:
 ## Nomenclatura
 
 1.  **Extensiones**: Utilize la extension  `.vue`  para los componentes de Vue. No use  `.js`  como extension de archivo
+
 2.  **Nomenclatura de Referencia**: Use PascalCase para sus instancias:
     
     ```
@@ -254,7 +251,6 @@ Ejemplo:
     };
     
     ```
-    
 
 3.  **Nomenclatura de las "props"**  Usar kebab-case en lugar de camelCase to proporcionar las "props" en los templates.
     
@@ -272,7 +268,6 @@ Ejemplo:
     <component my-prop="prop" />
     
     ```
-    
 
 ## Alienación
 
@@ -311,7 +306,7 @@ Ejemplo:
             />
         
         // Incorrecto
-         <component
+          <component
             bar="bar" />
         
         ```
@@ -401,7 +396,7 @@ Ejemplo:
         required: true
       }
     }
-    
+
     ```
 
 
@@ -442,6 +437,7 @@ Ejemplo:
     
 
 ## Etiquetas de cierre
+
 1.  Preferente usar etiquetas de auto-cierre en los componentes
     
     ```
