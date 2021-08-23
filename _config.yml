@@ -1,0 +1,5 @@
+name: Code Guidelines Frontend
+description: Guide for better code practices in all the projects
+url: "http://xhamir.github.io"
+markdown: kramdown
+highlighter: rudge
